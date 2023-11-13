@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "321026905024",
+    "project_id": "smartsnip-vkj",
+    "storage_bucket": "smartsnip-vkj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321026905024:android:a4f2c5e3ca5c4eb006ee25",
+        "android_client_info": {
+          "package_name": "com.smartsnip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321026905024-lur2ls235vjnj2a5d9tc80lqai296hpk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartsnip",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "321026905024-dn235j4b89v0un84mj4m1iliqdc138bl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0UtRxOJO04tAvR7OxAtkhyBi8m18Uo50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321026905024-dn235j4b89v0un84mj4m1iliqdc138bl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
