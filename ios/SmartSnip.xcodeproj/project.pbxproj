@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-SmartSnip-SmartSnipTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SmartSnip-SmartSnipTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		7024F8CA2BDB499BA8F579B9 /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EC9189D6E74AC2AA114799 /* MPLUSRounded1c-Black.ttf */; };
+		275D59E63FF24A03983E753B /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48CB2BA75F18489781E4F3B6 /* MPLUSRounded1c-Bold.ttf */; };
+		33E6E01ED2F642138883DFD1 /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B168C7D3C0D14D3F82E4B620 /* MPLUSRounded1c-ExtraBold.ttf */; };
+		6A03181A8110445F8DFB5410 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 480979B4EB474FBFBFFD6638 /* MPLUSRounded1c-Light.ttf */; };
+		461886CAF6E9419E9BC109D7 /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80B552877C5B4F17B713C2BD /* MPLUSRounded1c-Medium.ttf */; };
+		994E948D8EE443F098BC2AF6 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A3C224AD6A347F09A3182BD /* MPLUSRounded1c-Regular.ttf */; };
+		0BACD942D0CB4DBBAB31CF81 /* MPLUSRounded1c-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E45C53CE1EE74996A01423BC /* MPLUSRounded1c-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SmartSnip/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SmartSnip-SmartSnipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartSnip-SmartSnipTests.release.xcconfig"; path = "Target Support Files/Pods-SmartSnip-SmartSnipTests/Pods-SmartSnip-SmartSnipTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		43EC9189D6E74AC2AA114799 /* MPLUSRounded1c-Black.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Black.ttf"; path = "../assets/fonts/MPLUSRounded1c-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		48CB2BA75F18489781E4F3B6 /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Bold.ttf"; path = "../assets/fonts/MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B168C7D3C0D14D3F82E4B620 /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-ExtraBold.ttf"; path = "../assets/fonts/MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		480979B4EB474FBFBFFD6638 /* MPLUSRounded1c-Light.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Light.ttf"; path = "../assets/fonts/MPLUSRounded1c-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		80B552877C5B4F17B713C2BD /* MPLUSRounded1c-Medium.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Medium.ttf"; path = "../assets/fonts/MPLUSRounded1c-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7A3C224AD6A347F09A3182BD /* MPLUSRounded1c-Regular.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Regular.ttf"; path = "../assets/fonts/MPLUSRounded1c-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E45C53CE1EE74996A01423BC /* MPLUSRounded1c-Thin.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Thin.ttf"; path = "../assets/fonts/MPLUSRounded1c-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				7573A0A134744892B8BA68CF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +162,21 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		7573A0A134744892B8BA68CF /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				43EC9189D6E74AC2AA114799 /* MPLUSRounded1c-Black.ttf */,
+				48CB2BA75F18489781E4F3B6 /* MPLUSRounded1c-Bold.ttf */,
+				B168C7D3C0D14D3F82E4B620 /* MPLUSRounded1c-ExtraBold.ttf */,
+				480979B4EB474FBFBFFD6638 /* MPLUSRounded1c-Light.ttf */,
+				80B552877C5B4F17B713C2BD /* MPLUSRounded1c-Medium.ttf */,
+				7A3C224AD6A347F09A3182BD /* MPLUSRounded1c-Regular.ttf */,
+				E45C53CE1EE74996A01423BC /* MPLUSRounded1c-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +274,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				7024F8CA2BDB499BA8F579B9 /* MPLUSRounded1c-Black.ttf in Resources */,
+				275D59E63FF24A03983E753B /* MPLUSRounded1c-Bold.ttf in Resources */,
+				33E6E01ED2F642138883DFD1 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
+				6A03181A8110445F8DFB5410 /* MPLUSRounded1c-Light.ttf in Resources */,
+				461886CAF6E9419E9BC109D7 /* MPLUSRounded1c-Medium.ttf in Resources */,
+				994E948D8EE443F098BC2AF6 /* MPLUSRounded1c-Regular.ttf in Resources */,
+				0BACD942D0CB4DBBAB31CF81 /* MPLUSRounded1c-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

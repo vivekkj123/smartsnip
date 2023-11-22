@@ -33,12 +33,12 @@ const SignInScreen = ({navigation}) => {
     <View style={styles.SignInScreen}>
       <ImageBackground
         style={styles.ImageBackground}
-        source={require('../assets/blobs.png')}
+        source={require('../../assets/blobs.png')}
         resizeMode="cover">
         <View style={styles.container}>
           <View style={styles.container}>
             <Image
-              source={require('../assets/logo.png')}
+              source={require('../../assets/logo.png')}
               height={100}
               width={100}
             />
