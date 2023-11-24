@@ -48,7 +48,11 @@ const SubjectScreen = ({route, navigation}) => {
       <View style={styles.topBar}>
         <Text style={styles.topBarTitle}>{subjectName}</Text>
       </View>
-
+      {notes.length === 0 && (
+        <Text style={styles.noNotesText}>
+          No Notes Found, Create a new note
+        </Text>
+      )}
       <FlatList
         data={notes}
         keyExtractor={item => item.id}
@@ -58,6 +62,7 @@ const SubjectScreen = ({route, navigation}) => {
               navigation.navigate('NoteScreen', {
                 topic: item.title,
                 content: item.content,
+                noteId: item.id,
               })
             }
             style={styles.touchableNote}>
@@ -114,5 +119,9 @@ let styles = StyleSheet.create({
     padding: 10,
     paddingVertical: 20,
     margin: 10,
+  },
+  noNotesText: {
+    textAlign: 'center',
+    marginVertical: '50%',
   },
 });

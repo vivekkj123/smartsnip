@@ -1,12 +1,13 @@
+import {FAB} from '@rneui/themed';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Share, StyleSheet, Text, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
-const NoteScreen = ({route, navigation}) => {
-  const {topic, content} = route.params;
+const NoteScreen = ({route}) => {
+  const {topic, content, noteId} = route.params;
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.NoteScreen}>
       <View style={styles.topBar}>
         <Text style={styles.topBarTitle}>{topic}</Text>
       </View>
@@ -16,6 +17,18 @@ const NoteScreen = ({route, navigation}) => {
           <Text style={styles.NoteText}>{content}</Text>
         </View>
       </ScrollView>
+      <FAB
+        color="#FAD110"
+        title={'Share'}
+        icon={{name: 'share', color: '#000'}}
+        style={styles.shareButton}
+        titleStyle={styles.shareButtonTitle}
+        onPress={() =>
+          Share.share({
+            message: `Checkout this short note created using SmartSnip application about ${topic} \n \n Link: https://smartsnip-share.vercel.app/notes/${noteId}`,
+          })
+        }
+      />
     </View>
   );
 };
@@ -46,4 +59,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#1E1E1E',
   },
+  NoteScreen: {flex: 1},
+  shareButton: {marginBottom: 20},
+  shareButtonTitle: {color: '#000'},
 });

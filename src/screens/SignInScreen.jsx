@@ -4,8 +4,8 @@ import {
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import React, {useEffect} from 'react';
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
-
+import {Image, ImageBackground, StyleSheet, View} from 'react-native';
+import Text from '../components/CustomText';
 GoogleSignin.configure({
   webClientId:
     '321026905024-dn235j4b89v0un84mj4m1iliqdc138bl.apps.googleusercontent.com',
@@ -38,9 +38,8 @@ const SignInScreen = ({navigation}) => {
         <View style={styles.container}>
           <View style={styles.container}>
             <Image
-              source={require('../../assets/logo.png')}
-              height={100}
-              width={100}
+              source={require('../../assets/splashImage.png')}
+              style={styles.splashImage}
             />
             <Text style={styles.appTitle}>SmartSnip</Text>
           </View>
@@ -75,12 +74,18 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   appTitle: {
-    fontSize: 24,
-    fontWeight: '700',
+    fontSize: 30,
     color: '#000',
     marginVertical: 20,
+    fontFamily: 'MPLUSRounded1c-ExtraBold',
   },
   ImageBackground: {
     flex: 1,
+  },
+  splashImage: {
+    flex: 1,
+    resizeMode: 'contain',
+    height: 300,
+    width: 300,
   },
 });

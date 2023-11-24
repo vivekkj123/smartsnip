@@ -63,6 +63,25 @@ const HomeScreen = ({navigation}) => {
           source={{uri: auth().currentUser.photoURL}}
           style={styles.avatar}
         />
+        <TouchableOpacity
+          onPress={() => {
+            auth()
+              .signOut()
+              .then(() => {
+                navigation.navigate('SignInScreen');
+              });
+          }}
+          style={{
+            width: '22%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#1e1e1e',
+            paddingVertical: 5,
+            paddingHorizontal: 10,
+            borderRadius: 25,
+          }}>
+          <Text style={{fontSize: 16, color: '#fff'}}>Sign Out</Text>
+        </TouchableOpacity>
       </View>
       <TouchableOpacity
         style={styles.createSubjectButton}
@@ -72,6 +91,11 @@ const HomeScreen = ({navigation}) => {
         <Text style={styles.createSubjectButtonText}>Create New Subject</Text>
       </TouchableOpacity>
       <ScrollView contentContainerStyle={styles.SubjectContainer}>
+        {subjects.length === 0 && (
+          <Text style={styles.noSubjectsText}>
+            No Subjects Found, Create a new one to begin
+          </Text>
+        )}
         {subjects.map((sub, i) => (
           <SubjectCard
             onPress={() => {
@@ -117,6 +141,7 @@ const styles = StyleSheet.create({
     borderBottomEndRadius: 60,
     borderBottomStartRadius: 60,
     paddingHorizontal: 30,
+    paddingRight: 10,
     alignItems: 'center',
     justifyContent: 'space-between',
   },
@@ -159,4 +184,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   DialogTitle: {color: '#000', fontSize: 20},
+  noSubjectsText: {
+    textAlign: 'center',
+    marginVertical: '50%',
+  },
 });

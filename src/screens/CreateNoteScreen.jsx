@@ -6,10 +6,12 @@ import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
 
 import firestore from '@react-native-firebase/firestore';
+import Spinner from 'react-native-loading-spinner-overlay';
 const CreateNoteScreen = ({route, navigation}) => {
   const {subjectId} = route.params;
   const [Topic, setTopic] = useState('');
   const [Note, setNote] = useState('');
+  const [Loader, setLoader] = useState(false);
   const userId = auth().currentUser?.uid;
 
   const addNote = async () => {
@@ -26,7 +28,7 @@ const CreateNoteScreen = ({route, navigation}) => {
     }
   };
   let getSummarizedNote = () => {
-    console.info('CLICKED');
+    setLoader(true);
     axios
       .post('https://g4f-server.onrender.com/chat', {
         messages: [
@@ -40,10 +42,18 @@ const CreateNoteScreen = ({route, navigation}) => {
       })
       .then(res => {
         setNote(res.data.response);
+      })
+      .then(() => {
+        setLoader(false);
       });
   };
   return (
     <View style={{flex: 1}}>
+      <Spinner
+        visible={Loader}
+        textContent={'Hold on.. Let me generate your snip with AI...'}
+        textStyle={{textAlign: 'center'}}
+      />
       <View style={styles.topBar}>
         <Text style={styles.topBarTitle}>Create a New Note</Text>
       </View>
