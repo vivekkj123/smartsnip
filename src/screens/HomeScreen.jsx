@@ -1,10 +1,11 @@
 import auth from '@react-native-firebase/auth';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Text from '../components/CustomText';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import SubjectCard from '../components/SubjectCard';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Dialog, Input} from '@rneui/themed';
+import firestore from '@react-native-firebase/firestore';
 // display greeting according to time
 var date = new Date();
 var hours = date.getHours();
@@ -17,13 +18,39 @@ if (hours < 12) {
   message = 'Good Evening';
 }
 const HomeScreen = ({navigation}) => {
-  let subjects = [
-    'Computer Networks',
-    'System Software',
-    'Sustainable Engineering',
-    'Logical System Design',
-    'Formal Language and Automata Theory',
-  ];
+  const [subjects, setSubjects] = useState([]);
+  const [newSubject, setNewSubject] = useState('');
+  const userId = auth().currentUser?.uid;
+
+  useEffect(() => {
+    const unsubscribe = firestore()
+      .collection('subjects')
+      .where('userId', '==', userId)
+      .onSnapshot(querySnapshot => {
+        if (querySnapshot) {
+          const subjectsData = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setSubjects(subjectsData);
+        }
+      });
+
+    return () => unsubscribe();
+  }, [userId]);
+
+  const addSubject = async () => {
+    try {
+      await firestore().collection('subjects').add({
+        name: newSubject,
+        userId,
+      });
+      setNewSubject('');
+      setDialogVisible(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const [DialogVisible, setDialogVisible] = useState(false);
   return (
     <View>
@@ -48,26 +75,25 @@ const HomeScreen = ({navigation}) => {
         {subjects.map((sub, i) => (
           <SubjectCard
             onPress={() => {
-              navigation.navigate('SubjectScreen');
+              navigation.navigate('SubjectScreen', {subjectId: sub.id});
             }}
-            subject={sub}
-            key={i}
+            subject={sub.name}
+            key={sub.id}
           />
         ))}
       </ScrollView>
-      <Dialog
-        isVisible={DialogVisible}
-        overlayStyle={{
-          backgroundColor: '#fff',
-          borderRadius: 30,
-        }}>
+      <Dialog isVisible={DialogVisible} overlayStyle={styles.overlayStyle}>
         <Dialog.Title
-          titleStyle={{color: '#000', fontSize: 20}}
+          titleStyle={styles.DialogTitle}
           title={'Create New Subject'}
         />
-        <Input placeholder="Subject Title, Eg: Maths" />
+        <Input
+          placeholder="Subject Title, Eg: Maths"
+          value={newSubject}
+          onChangeText={text => setNewSubject(text)}
+        />
         <Dialog.Actions>
-          <Dialog.Button title={'Create'} />
+          <Dialog.Button title={'Create'} onPress={addSubject} />
           <Dialog.Button
             title={'Cancel'}
             onPress={() => {
@@ -128,4 +154,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'MPLUSRounded1c-Bold',
   },
+  overlayStyle: {
+    backgroundColor: '#fff',
+    borderRadius: 30,
+  },
+  DialogTitle: {color: '#000', fontSize: 20},
 });

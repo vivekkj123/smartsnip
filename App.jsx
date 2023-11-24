@@ -1,12 +1,13 @@
 import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import {StatusBar} from 'react-native';
 import 'react-native-gesture-handler';
-import SignInScreen from './src/screens/SignInScreen';
-import {createStackNavigator} from '@react-navigation/stack';
+import CreateNoteScreen from './src/screens/CreateNoteScreen';
 import HomeScreen from './src/screens/HomeScreen';
+import SignInScreen from './src/screens/SignInScreen';
 import SubjectScreen from './src/screens/SubjectScreen';
-import SubjectCard from './src/components/SubjectCard';
+import NoteScreen from './src/screens/NoteScreen';
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -14,12 +15,11 @@ const App = () => {
     <NavigationContainer>
       <StatusBar hidden />
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/* Screens */}
         <Stack.Screen name="SignInScreen" component={SignInScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="SubjectScreen" component={SubjectScreen} />
-        {/* Some components that require navigation */}
-        <Stack.Screen name="SubjectCard" component={SubjectCard} />
+        <Stack.Screen name="CreateNoteScreen" component={CreateNoteScreen} />
+        <Stack.Screen name="NoteScreen" component={NoteScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
