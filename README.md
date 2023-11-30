@@ -1,79 +1,64 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# SmartSnip
+<img src="./doc/logo.png" alt="logo" width=100 height=100>
 
-# Getting Started
+SmartSnip is a mobile application that leverages the power of React Native, Firebase, and GPT4Free to simplify the note-taking process. Instead of manually typing and saving notes, users can create subjects and topics within those subjects. SmartSnip utilizes AI to generate summarized and simplified notes on specific topics, providing users with a more efficient way to capture information.
+## Screenshots
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+| ![Screenshot 1](./doc/screenshot-1.jpeg) Welcome Screen                   | ![Screenshot 5](./doc/screenshot-2.jpeg) **Home Screen**         |
+| ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| ![Screenshot 3](./doc/screenshot-3.jpeg) **Subject Screen**   | ![Screenshot 4](./doc/screenshot-4.jpeg) **Create a new note screen** |
+| ![Screenshot 5](./doc/screenshot-5.jpeg) **Note View Screen** | ![Screenshot 2](./doc/screenshot-6.png) **Public share view**  |
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Tech Stack
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- React Native: A framework for building native mobile applications using React.
+- Firebase: A comprehensive mobile and web application development platform, including authentication, real-time database, and cloud storage.
+- [GPT4Free](https://github.com/xtekky/gpt4free): An unofficial free API for OpenAI's API, providing powerful natural language processing capabilities.
+- Flask: For creating backend api server using g4f package. See demo server at [g4f-server](https://github.com/vivekkj123/g4f-server)
+- Nextjs: For displaying public shared notes. see [SmartSnip-share](https://github.com/vivekkj123/SmartSnip-share)
 
-```bash
-# using npm
-npm start
 
-# OR using Yarn
-yarn start
-```
+## Features
 
-## Step 2: Start your Application
+- **Subject Management:** Create and organize subjects to categorize your notes effectively.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- **Topic Summarization:** Enter specific topics within subjects, and let the AI-powered GPT-4-Free generate summarized notes for you.
 
-### For Android
+- **Firebase Authentication:** Securely authenticate users and ensure private access to their subjects and notes.
 
-```bash
-# using npm
-npm run android
+- **Share notes with your classmates:** Once a note is created you can share it with your classmates using a public viewable link
 
-# OR using Yarn
-yarn android
-```
+## Getting Started
 
-### For iOS
+1. Clone the repository:
 
-```bash
-# using npm
-npm run ios
+   ```bash
+   git clone https://github.com/your-username/SmartSnip.git
+   ```
 
-# OR using Yarn
-yarn ios
-```
+2. Install dependencies:
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+   ```bash
+   cd SmartSnip
+   npm install
+   ```
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+3. Set up Firebase:
 
-## Step 3: Modifying your App
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+   - Obtain the `google-services.json` from firebase and replace them in `android/app/` directory
 
-Now that you have successfully run the app, let's modify it.
+4. Run the application:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+   ```bash
+   npm start
+   ```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Contributing
 
-## Congratulations! :tada:
+This project is created as part of our semester 5 project exhibition. If you are inspired and too enthusiastic about this web application, feel free to ping me on any social medias before proposing any changes.
 
-You've successfully run and modified your React Native App. :partying_face:
+## License
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the [MIT License](LICENSE).
